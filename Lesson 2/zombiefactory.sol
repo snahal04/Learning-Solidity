@@ -14,9 +14,14 @@ contract ZombieFactory {
 
     Zombie[] public zombies;
 
-    mapping (uint => address) public zombieToOwner;
+    // Each account has an address, which you can think of like a bank account number. 
+    // It's a unique identifier that points to that account.
+    
+    mapping (uint => address) public zombieToOwner;  
     mapping (address => uint) ownerZombieCount;
 
+    // A mapping is essentially a key-value store for storing and looking up data
+    
     function _createZombie(string memory _name, uint _dna) internal {
         uint id = zombies.push(Zombie(_name, _dna)) - 1;
         zombieToOwner[id] = msg.sender;
