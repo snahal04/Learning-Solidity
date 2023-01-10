@@ -45,7 +45,7 @@ contract ZombieFactory {
         uint randDna = _generateRandomDna(_name);
         
         randDna = randDna - randDna % 100;     
-        
+        // Generating random DNA 
         _createZombie(_name, randDna);
     }
 
